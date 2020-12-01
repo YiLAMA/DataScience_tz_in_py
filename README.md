@@ -103,17 +103,23 @@ default file_read='incidents', default M=100, default dT=0.3, default file_save=
 $ python3 main.py
 ```
    
-Результат выполнение вызова:  
+Результат выполнение вызова с указанными аргументами:  
 ```
-$ python3 main.py -fr incidents -M 1 -dT 0.3 -fs countsTest
+$ python3 main.py -fr incidents -M 2 -dT 0.3 -fs countsTest
 Namespace(M=2, dT=0.3, file_read='incidents', file_save='countsTest')
 Наша функция закончила свою работу за 0.01 секунд
 ```
-
+  
 При вызове, необязательно указывать ВСЕ аргументы, пропущенные будут заполнены по умолчанию (default). 
 Пример такого вызова:  
 ```
 $ python3 main.py -fr incidents -fs countsTest
+```
+  
+Метод №2, с помощью "sys.argv", для работы надо сперва его раскомментировать в файле main.py.  
+Пример вызова из командной строки:  
+```
+$ python3 main.py get_counts incidents 100 0.3 counts
 ```
   
 ### Можно было "защиту от дураков" добавить. Например, чтобы dT параметр был строго от 0 до 1, иначе код будет реагировать. Однако, этого не требуется по условиям задачи. 
